@@ -1,0 +1,503 @@
+2015-11-21 09:27:01 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#12 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#13 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#14 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#15 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#16 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#17 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#19 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#20 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#21 [internal function]: frontend\controllers\SiteController->actionLogin()
+#22 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#23 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#24 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#25 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#26 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#10 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#11 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#12 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#13 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#17 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#18 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#19 [internal function]: frontend\controllers\SiteController->actionLogin()
+#20 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-11-21 09:27:01 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'YVRzNWtiNlAObSsADlMHGCk9HnEeMWx9LRJHYy5TQTYYbTlsJgh5EQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    'pma_lang' => 'ru'
+    'pma_collation_connection' => 'utf8_general_ci'
+    'pma_mcrypt_iv' => 'H6b4gdX6LFs='
+    'phpMyAdmin' => '7014hii7781bat6stb4ktbcsbnau0ppj'
+    '_csrf' => '893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA\";}'
+    'PHPSESSID' => 'tshdsrglc7sv7n3eskmv9rb9t6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xewony'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.a2m.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.a2m.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.a2m.local/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'pma_lang=ru; pma_collation_connection=utf8_general_ci; pma_mcrypt_iv=H6b4gdX6LFs%3D; phpMyAdmin=7014hii7781bat6stb4ktbcsbnau0ppj; _csrf=893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA%22%3B%7D; PHPSESSID=tshdsrglc7sv7n3eskmv9rb9t6'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.a2m.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_HOST' => 'localhost'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/var/www/A2M/frontend/web/index.php'
+    'REMOTE_PORT' => '57116'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1448098021.941
+    'REQUEST_TIME' => 1448098021
+]
+2015-11-21 09:27:39 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(363): yii\db\Command->queryScalar()
+#10 /var/www/A2M/vendor/yiisoft/yii2/validators/UniqueValidator.php(111): yii\db\Query->exists()
+#11 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#12 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#13 /var/www/A2M/frontend/models/SignupForm.php(46): yii\base\Model->validate()
+#14 /var/www/A2M/frontend/controllers/SiteController.php(153): frontend\models\SignupForm->signup()
+#15 [internal function]: frontend\controllers\SiteController->actionSignup()
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#17 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#19 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#20 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#22 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(385): yii\db\Command->queryInternal('<span class="st...', '<span class="nu...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(363): yii\db\Command->queryScalar()
+#8 /var/www/A2M/vendor/yiisoft/yii2/validators/UniqueValidator.php(111): yii\db\Query->exists()
+#9 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\UniqueValidator->validateAttribute(Object(frontend\models\SignupForm), '<span class="st...')
+#10 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(frontend\models\SignupForm), '[<span class="s...')
+#11 /var/www/A2M/frontend/models/SignupForm.php(46): yii\base\Model->validate()
+#12 /var/www/A2M/frontend/controllers/SiteController.php(153): frontend\models\SignupForm->signup()
+#13 [internal function]: frontend\controllers\SiteController->actionSignup()
+#14 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#15 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#17 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#20 {main}
+Additional Information:
+
+2015-11-21 09:27:39 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][info][application] $_GET = [
+    'r' => 'site/signup'
+]
+
+$_POST = [
+    '_csrf' => 'cUZiZXdoMEIefzpQElkBCjkvDyECO2pvPQBWMzJZRyQIfyg8OgJ/Aw=='
+    'SignupForm' => [
+        'username' => 'admin'
+        'email' => 'fisker@ro.ru'
+        'password' => '1Zxcvb'
+    ]
+    'signup-button' => ''
+]
+
+$_COOKIE = [
+    'pma_lang' => 'ru'
+    'pma_collation_connection' => 'utf8_general_ci'
+    'pma_mcrypt_iv' => 'H6b4gdX6LFs='
+    'phpMyAdmin' => '7014hii7781bat6stb4ktbcsbnau0ppj'
+    '_csrf' => '893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA\";}'
+    'PHPSESSID' => 'tshdsrglc7sv7n3eskmv9rb9t6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xewony'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.a2m.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '183'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.a2m.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.a2m.local/index.php?r=site%2Fsignup'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'pma_lang=ru; pma_collation_connection=utf8_general_ci; pma_mcrypt_iv=H6b4gdX6LFs%3D; phpMyAdmin=7014hii7781bat6stb4ktbcsbnau0ppj; _csrf=893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA%22%3B%7D; PHPSESSID=tshdsrglc7sv7n3eskmv9rb9t6'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.a2m.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_HOST' => 'localhost'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/var/www/A2M/frontend/web/index.php'
+    'REMOTE_PORT' => '57136'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Fsignup'
+    'REQUEST_URI' => '/index.php?r=site%2Fsignup'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1448098059.032
+    'REQUEST_TIME' => 1448098059
+]
+2015-11-21 09:31:21 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#12 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#13 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#14 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#15 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#16 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#17 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#19 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#20 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#21 [internal function]: frontend\controllers\SiteController->actionLogin()
+#22 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#23 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#24 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#25 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#26 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#28 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#10 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#11 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#12 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#13 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#17 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#18 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#19 [internal function]: frontend\controllers\SiteController->actionLogin()
+#20 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#26 {main}
+Additional Information:
+
+2015-11-21 09:31:21 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'ckxLRG9ZbXcddRNxCmhcPzolJgAaCjdaPgp/EipoGhELdQEdIjMiNg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    'pma_lang' => 'ru'
+    'pma_collation_connection' => 'utf8_general_ci'
+    'pma_mcrypt_iv' => 'H6b4gdX6LFs='
+    'phpMyAdmin' => '7014hii7781bat6stb4ktbcsbnau0ppj'
+    '_csrf' => '893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA\";}'
+    'PHPSESSID' => 'tshdsrglc7sv7n3eskmv9rb9t6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xewony'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.a2m.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.a2m.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.a2m.local/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'pma_lang=ru; pma_collation_connection=utf8_general_ci; pma_mcrypt_iv=H6b4gdX6LFs%3D; phpMyAdmin=7014hii7781bat6stb4ktbcsbnau0ppj; _csrf=893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA%22%3B%7D; PHPSESSID=tshdsrglc7sv7n3eskmv9rb9t6'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.a2m.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_HOST' => 'localhost'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/var/www/A2M/frontend/web/index.php'
+    'REMOTE_PORT' => '57276'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1448098281.68
+    'REQUEST_TIME' => 1448098281
+]
+2015-11-21 09:45:41 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'a2m.user' doesn't exist' in /var/www/A2M/vendor/yiisoft/yii2/db/Command.php:837
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(837): PDOStatement->execute()
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#5 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#6 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#7 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#10 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#11 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#12 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#13 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#14 [internal function]: frontend\controllers\SiteController->actionLogin()
+#15 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#17 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#19 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#21 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'a2m.user' doesn't exist
+The SQL being executed was: SELECT * FROM `user` WHERE (`username`='admin') AND (`status`=10)' in /var/www/A2M/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/A2M/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /var/www/A2M/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /var/www/A2M/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#4 /var/www/A2M/vendor/yiisoft/yii2/db/BaseActiveRecord.php(102): yii\db\ActiveQuery->one()
+#5 /var/www/A2M/common/models/User.php(82): yii\db\BaseActiveRecord::findOne('[<span class="s...')
+#6 /var/www/A2M/common/models/LoginForm.php(73): common\models\User::findByUsername('<span class="st...')
+#7 /var/www/A2M/common/models/LoginForm.php(44): common\models\LoginForm->getUser()
+#8 [internal function]: common\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#9 /var/www/A2M/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#10 /var/www/A2M/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(common\models\LoginForm), '<span class="st...')
+#11 /var/www/A2M/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(common\models\LoginForm), '[<span class="s...')
+#12 /var/www/A2M/common/models/LoginForm.php(58): yii\base\Model->validate()
+#13 /var/www/A2M/frontend/controllers/SiteController.php(90): common\models\LoginForm->login()
+#14 [internal function]: frontend\controllers\SiteController->actionLogin()
+#15 /var/www/A2M/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#16 /var/www/A2M/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#17 /var/www/A2M/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#18 /var/www/A2M/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#19 /var/www/A2M/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/A2M/frontend/web/index.php(18): yii\base\Application->run()
+#21 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'a2m.user' doesn't exist
+)
+
+2015-11-21 09:45:39 [127.0.0.1][-][tshdsrglc7sv7n3eskmv9rb9t6][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf' => 'T1BoQ2hXLmMgaTB2DWYfKwc5BQcdBHROAxZcFS1mWQU2aSIaJT1hIg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_COOKIE = [
+    'pma_lang' => 'ru'
+    'pma_collation_connection' => 'utf8_general_ci'
+    'pma_mcrypt_iv' => 'H6b4gdX6LFs='
+    'phpMyAdmin' => '7014hii7781bat6stb4ktbcsbnau0ppj'
+    '_csrf' => '893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA\";}'
+    'PHPSESSID' => 'tshdsrglc7sv7n3eskmv9rb9t6'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__captcha/site/captcha' => 'xewony'
+    '__captcha/site/captchacount' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'frontend.a2m.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '196'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://frontend.a2m.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://frontend.a2m.local/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip,deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'pma_lang=ru; pma_collation_connection=utf8_general_ci; pma_mcrypt_iv=H6b4gdX6LFs%3D; phpMyAdmin=7014hii7781bat6stb4ktbcsbnau0ppj; _csrf=893031d46185075228e3cad1eaa53082d5c03a628461867173933862ae786b15a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22o9X5e11HHimDuSZ-LF4VE1wfy9JYMjOA%22%3B%7D; PHPSESSID=tshdsrglc7sv7n3eskmv9rb9t6'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'frontend.a2m.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_HOST' => 'localhost'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/A2M/frontend/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => '/var/www/A2M/frontend/web/index.php'
+    'REMOTE_PORT' => '57480'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1448099139.767
+    'REQUEST_TIME' => 1448099139
+]
